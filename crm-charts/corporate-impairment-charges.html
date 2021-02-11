@@ -17,14 +17,14 @@
     // The type of chart we want to create
     type: 'bar',
 
-    // The data for our dataset
+    //Line chart
     data: {
         labels: ['2008', '2017', '2018', '2019', '2020E'],
         datasets: [
         {
           label: 'Average',
-          data: [250, 130, 115, 250, 450],
           type: 'line',
+          data: [250, 130, 115, 250, 450],
           lineTension: 0.6,
           fill: false,
           borderColor: 'black',
@@ -47,6 +47,8 @@
           pointRadius: 20,
           rotation: 35
         },
+
+        //Bar chart data
         {
           label: 'Conservative',
           backgroundColor: '#3578BD',
@@ -79,6 +81,7 @@
           scaleLabel: {
             display: true,
             labelString: 'Annual Impairments (Billions)',
+            fontColor: 'black',
             fontSize: 24
           }
         }]
