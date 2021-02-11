@@ -17,37 +17,9 @@
     // The type of chart we want to create
     type: 'bar',
 
-    //Line chart
     data: {
         labels: ['2008', '2017', '2018', '2019', '2020E'],
         datasets: [
-        {
-          label: 'Average',
-          type: 'line',
-          data: [250, 130, 115, 250, 450],
-          lineTension: 0.6,
-          fill: false,
-          borderColor: 'black',
-          borderWidth: 10,
-          pointRadius: 0
-        },
-
-        //Point style for arrow at end of graph
-        {
-          type: 'line',
-          label: '',
-          data: [{
-            x: '2020E',
-            y: 450
-          }],
-          fill: false,
-          borderColor: 'black',
-          backgroundColor: 'black',
-          pointStyle: 'triangle',
-          pointRadius: 20,
-          rotation: 35
-        },
-
         //Bar chart data
         {
           label: 'Conservative',
