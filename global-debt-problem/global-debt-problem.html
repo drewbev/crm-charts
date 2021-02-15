@@ -20,23 +20,14 @@
       type: 'line',
 
       data: {
-        labels: ['Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018', 'Q3 2018', 'Q4 2018', 'Q1 2019', 'Q2 2019', 'Q3 2019', 'Q4 2019', 'Q1 2020', 'Q2 2020'],
+        labels: ['1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
         datasets: [
-          //Bar chart data
           {
-            label: 'Net Losses',
+            label: 'US Non-Financial Corporate Debt to GDP',
             backgroundColor: '#3578BD',
             borderColor: '#3578BD',
-            borderWidth: 10,
-            data: [54, 49, 46, 51, 52, 48, 45, 50, 53, 49, 49, 55, 61, 64],
-            fill: false
-          },
-          {
-            label: 'Net Profits',
-            backgroundColor: '#C72A2D',
-            borderColor: '#C72A2D',
-            borderWidth: 10,
-            data: [46, 50, 54, 49, 47, 52, 54, 50, 47, 51, 52, 45, 40, 36],
+            borderWidth: 5,
+            data: [40.5, 41.2, 41.7, 42.1, 42.8, 38.5, 37, 37.5, 39, 39.1, 38.5, 41, 42.5, 44, 45, 44.9, 43.3, 40.9, 39.5, 39.5, 41, 44.5, 45.7, 42, 40, 40.3, 41, 41.8, 43, 45, 44.7, 44.7, 45.8, 51, 58],
             fill: false
           }
         ]
@@ -49,12 +40,9 @@
             barPercentage: 1.0
           }],
           yAxes: [{
-            ticks: {
-              beginAtZero: true
-            },
             scaleLabel: {
               display: true,
-              labelString: '% of Companies Reporting',
+              labelString: 'US NFCD to GDP',
               fontColor: 'black',
               fontSize: 24
             }
@@ -62,7 +50,7 @@
         },
         title: {
           display: true,
-          text: 'Corporate Profitability',
+          text: 'BANKRUPTCY FORECAST',
           fontSize: 32,
           fontColor: 'black'
         },
