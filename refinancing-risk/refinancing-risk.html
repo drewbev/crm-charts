@@ -57,11 +57,17 @@
       options: {
         scales: {
           xAxes: [{
-            barPercentage: 1.0
+            barPercentage: 1.0,
+            ticks: {
+              fontColor: 'black',
+              fontSize: 14
+            }
           }],
           yAxes: [{
             ticks: {
-              beginAtZero: true
+              beginAtZero: true,
+              fontColor: 'black',
+              fontSize: 14
             },
             scaleLabel: {
               display: true,
@@ -70,6 +76,7 @@
               fontSize: 24
             }
           }]
+
         },
         title: {
           display: true,

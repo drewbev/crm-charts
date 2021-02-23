@@ -46,17 +46,22 @@
       options: {
         scales: {
           xAxes: [{
-            barPercentage: 1.0
+            barPercentage: 1.0,
+            ticks: {
+              fontColor: 'black',
+              fontSize: 16
+            }
           }],
           yAxes: [{
-            ticks: {
-              beginAtZero: true
-            },
             scaleLabel: {
               display: true,
               labelString: '% of Companies Reporting',
               fontColor: 'black',
               fontSize: 24
+            },
+            ticks: {
+              fontColor: 'black',
+              fontSize: 16
             }
           }]
         },
