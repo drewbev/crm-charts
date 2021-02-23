@@ -15,12 +15,33 @@
 
   <script>
     var myChart = document.getElementById('myChart').getContext('2d');
+    var sun = new Image();
+    sun.src = 'img/496B-LOSS.png';
+
+    var cloud = new Image();
+    cloud.src = 'img/87B-LOSS.png';
+
+    var star = new Image();
+    star.src = 'img/202B-LOSS.png';
+
+    var triangle = new Image();
+    triangle.src = 'img/219B-LOSS.png';
+
+
+Chart.pluginService.register({
+    afterUpdate: function(chart) {
+        chart.config.data.datasets[0]._meta[0].data[34]._model.pointStyle = sun;
+        chart.config.data.datasets[2]._meta[0].data[4]._model.pointStyle = cloud;
+        chart.config.data.datasets[2]._meta[0].data[15]._model.pointStyle = star;
+        chart.config.data.datasets[2]._meta[0].data[22]._model.pointStyle = triangle;
+    }
+});
     var chart = new Chart(myChart, {
       // The type of chart we want to create
       type: 'line',
 
       data: {
-        labels: ['1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+        labels: ['1987', '1988', '1989', '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
         datasets: [
           {
             label: 'US Non-Financial Corporate Debt to GDP',
@@ -28,6 +49,15 @@
             borderColor: '#3578BD',
             borderWidth: 5,
             data: [40.5, 41.2, 41.7, 42.1, 42.8, 38.5, 37, 37.5, 39, 39.1, 38.5, 41, 42.5, 44, 45, 44.9, 43.3, 40.9, 39.5, 39.5, 41, 44.5, 45.7, 42, 40, 40.3, 41, 41.8, 43, 45, 44.7, 44.7, 45.8, 51, 58],
+            fill: false
+          },
+          {
+            label: 'US Non-Financial Corporate Debt to GDP - DOTTED',
+            backgroundColor: '#3578BD',
+            borderColor: '#3578BD',
+            borderDash: [5,5],
+            borderWidth: 5,
+            data: [40.5, 41.2, 41.7, 42.1, 42.8, 38.5, 37, 37.5, 39, 39.1, 38.5, 41, 42.5, 44, 45, 44.9, 43.3, 40.9, 39.5, 39.5, 41, 44.5, 45.7, 42, 40, 40.3, 41, 41.8, 43, 45, 44.7, 44.7, 45.8, 51, 58, 51, 44, 41],
             fill: false
           },
           {
@@ -39,12 +69,35 @@
             fill: false
           },
           {
+            label: 'Annual Moving Average Default Rate for Corporate Bonds - DOTTED',
+            backgroundColor: 'red',
+            borderColor: 'red',
+            borderDash: [5,5],
+            borderWidth: 5,
+            data: [45, 40, 43, 51, 51, 41.3, 37, 37.3, 38, 37, 37.2, 38, 42.5, 44, 51, 55.8, 43, 37.3, 41, 36.3, 36.2, 43, 52, 37, 37.4, 37.1, 38, 39, 42, 38, 38, 38.3, 42, 42.1, 56, 46, 41, 39 ],
+            fill: false
+          },
+          {
             label: 'Annual Moving Average Bankruptcy Rate for Corporate Bonds',
             backgroundColor: 'green',
             borderColor: 'green',
             borderWidth: 5,
             data: [39, 38.8, 38.9, 39, 39.2, 39.1, 38.9, 38.5, 38.3, 38, 38.2, 38, 37.8, 37.7, 38, 38, 38, 38, 38.2, 37, 37.4, 37.7, 39.5, 37.5, 37.8, 37.6, 37.5, 37.2, 37.5, 39, 38.5, 37, 37.4, 39, 40.5],
             fill: false
+          },
+          {
+            label: 'Annual Moving Average Bankruptcy Rate for Corporate Bonds - DOTTED',
+            backgroundColor: 'green',
+            borderColor: 'green',
+            borderDash: [5,5],
+            borderWidth: 5,
+            data: [39, 38.8, 38.9, 39, 39.2, 39.1, 38.9, 38.5, 38.3, 38, 38.2, 38, 37.8, 37.7, 38, 38, 38, 38, 38.2, 37, 37.4, 37.7, 39.5, 37.5, 37.8, 37.6, 37.5, 37.2, 37.5, 39, 38.5, 37, 37.4, 39, 40.5, 38, 37],
+            fill: false,
+            options: {
+              legend: {
+                display: false //need to hide the dotted legend items
+              }
+            }
           }
         ]
       },
